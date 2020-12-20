@@ -17,6 +17,34 @@
 
 * Project running on Azure App Service
 
+Create a webapp and deploy code from a local workspace to the app. The command is required to run from the folder where the code is present. 
+```bash
+(.udacity-azure-course-project2) anja@Azure:~/udacity-azure-course-project2$ az webapp up -n udacity-azure-course-project2-cicd --sku F1 --resource-group udacity-azure-course-project2-rg -l westeurope
+The webapp 'udacity-azure-course-project2-cicd' doesn't exist
+Creating webapp 'udacity-azure-course-project2-cicd' ...
+Configuring default logging for the app, if not already enabled
+Creating zip with contents of dir /home/anja/udacity-azure-course-project2 ...
+Getting scm site credentials for zip deployment
+Starting zip deployment. This operation can take a while to complete ...
+Deployment endpoint responded with status code 202
+
+You can launch the app at http://udacity-azure-course-project2-cicd.azurewebsites.net
+{
+  "URL": "http://udacity-azure-course-project2-cicd.azurewebsites.net",
+  "appserviceplan": "udacity-azure-course-project2-cicd-asp",
+  "location": "westeurope",
+  "name": "udacity-azure-course-project2-cicd",
+  "os": "Linux",
+  "resourcegroup": "udacity-azure-course-project2-rg",
+  "runtime_version": "python|3.7",
+  "runtime_version_detected": "-",
+  "sku": "FREE",
+  "src_path": "//home//anja//udacity-azure-course-project2"
+}
+(.udacity-azure-course-project2) anja@Azure:~/udacity-azure-course-project2$
+(.udacity-azure-course-project2) anja@Azure:~/udacity-azure-course-project2$
+```
+
 * Project cloned into Azure Cloud Shell
 ![Screenshot project cloned into Azure Cloud Shelld](https://github.com/schildner/udacity-azure-course-project2/blob/main/cloud-shell-cloned-github-repo-via-ssh.png?raw=true)
 
