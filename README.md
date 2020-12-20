@@ -21,7 +21,7 @@
 ![Screenshot project cloned into Azure Cloud Shelld](https://github.com/schildner/udacity-azure-course-project2/blob/main/cloud-shell-cloned-github-repo-via-ssh.png?raw=true)
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
-![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshot-make-all.png?raw=true)
+![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/cloud-shell-make-all.png?raw=true)
 
 * Output of a test run
 ![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshot-build1-pass.png?raw=true)
