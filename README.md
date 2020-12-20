@@ -19,7 +19,12 @@
 
 Create a webapp and deploy code from a local workspace to the app. The command is required to run from the folder where the code is present. 
 ```bash
-(.udacity-azure-course-project2) anja@Azure:~/udacity-azure-course-project2$ az webapp up -n udacity-azure-course-project2-cicd --sku F1 --resource-group udacity-azure-course-project2-rg -l westeurope
+(.udacity-azure-course-project2) anja@Azure:~/udacity-azure-course-project2$ az webapp up \
+      -n udacity-azure-course-project2-cicd \
+      --sku F1 \
+      --resource-group udacity-azure-course-project2-rg \
+      -l westeurope
+
 The webapp 'udacity-azure-course-project2-cicd' doesn't exist
 Creating webapp 'udacity-azure-course-project2-cicd' ...
 Configuring default logging for the app, if not already enabled
