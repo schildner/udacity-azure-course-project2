@@ -18,10 +18,14 @@
 * Project running on Azure App Service
 
 * Project cloned into Azure Cloud Shell
+![Screenshot project cloned into Azure Cloud Shelld](https://github.com/schildner/udacity-azure-course-project2/blob/main/cloud-shell-cloned-github-repo-via-ssh.png?raw=true)
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
+![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshot-make-all.png?raw=true)
 
 * Output of a test run
+![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshot-build1-pass.png?raw=true)
+
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
