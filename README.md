@@ -1,6 +1,8 @@
 # Overview
 
-<TODO: complete this with an overview of your project>
+This project contains a python flask app which serves out housing prices predictions through API calls.
+
+The algorithm is based on pre-trained sklearn ML model for Boston area. 
 
 ## Project Plan
 <TODO: Project Plan
@@ -79,7 +81,7 @@ Port: 443
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+In future, this project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
 ## Demo 
 
