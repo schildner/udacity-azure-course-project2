@@ -5,10 +5,9 @@ This project contains a python flask app which serves out housing prices predict
 The algorithm is based on pre-trained sklearn ML model for Boston area. 
 
 ## Project Plan
-<TODO: Project Plan
 
-* A link to a Trello board for the project: https://trello.com/b/2bKbpU9v/udacity-azure-course-project-2
-* A link to a spreadsheet that includes the original and final project plan>
+* A link to a Trello board for the project: [Udacity Azure Course Project 2](https://trello.com/b/2bKbpU9v/udacity-azure-course-project-2)
+* A link to a spreadsheet that includes the original and final project plan: [Spreadsheet on Google Drive](https://docs.google.com/spreadsheets/d/1VvhKAVZM7I1qVYufkkjYf5vR3nBcCQtji21aupZyXik/edit?usp=sharing)
 
 ## Instructions
 
