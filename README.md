@@ -16,25 +16,37 @@ This repository was created for the Udacity Azure DevOps Course Project 2 submis
 ## Instructions
   
 ### Architectural Diagram 
+
 <TODO (Shows how key parts of the system work)>
 
 ### Dependencies
+
 1. Create an [Azure Account](https://portal.azure.com) 
 2. Install the [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 3. Install [Terraform](https://www.terraform.io/downloads.html)
 
 ### Getting Started
-1. Clone this repository
-2. Make sure the following environment variables are set and correspond to your azure account details:
-ARM_CLIENT_ID, ARM_CLIENT_SECRET, ARM_SUBSCRIPTION_ID, ARM_TENANT_ID
+
+1. Open Azure cloud shell
+2. Create gpg keys for ssh access and add them to your GitHub (Settings, GPG keys, add new)
+3. Clone this repository
+4. Make sure the following environment variables are set and correspond to your azure account details:
+
+* ARM_CLIENT_ID
+* ARM_CLIENT_SECRET
+* ARM_SUBSCRIPTION_ID 
+* ARM_TENANT_ID
 
 Login to your azure account and see the account details:
+
 ```bash
 user@Azure:~/ az login
 user@Azure:~/ az account list
 ```
+
 Use export command to assign the values from corresponding subscription to the following env vars:
 Actually, ARM_SUBSCRIPTION_ID was enough :)
+
 ```bash
 user@Azure:~/ export ARM_CLIENT_ID=<value from property 'homeTenantId'>
 user@Azure:~/ export ARM_CLIENT_SECRET=<value from>
@@ -44,17 +56,22 @@ user@Azure:~/ export ARM_TENANT_ID=<value from property 'tenantId'>
 
 ### Instructions for running the Python project
 
+0. In Azure cloud shell
+
 1. Go into the cloned project's directory and perform the following Terraform commands:
+
 ```bash
 user@Azure:~/$ cd udacity-azure-course-project2
 user@Azure:~/udacity-azure-course-project2$ terraform init
 user@Azure:~/udacity-azure-course-project2$ terraform plan -out solution.plan
 user@Azure:~/udacity-azure-course-project2$ terraform apply "solution.plan"
 ```
-This should have created the resource group, app service plan, and an app service:
+
+This should have created the resource group, app service plan, app service and storage account:
 udacity-azure-course-project2-cicd-rg
 udacity-azure-course-project2-cicd-asp
 udacity-azure-course-project2-cicd-appservice
+udacity-azure-course-project2-cicd-cloudshell-sa
 
 2. Run the script commands.sh to deploy the python project to Azure
 
