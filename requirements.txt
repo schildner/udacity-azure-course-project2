@@ -1,8 +1,9 @@
-Flask==1.1.2
-pandas==1.2.0
-scikit-learn==0.24.0
+Flask==1.0.4            # python 3.4 - 3.8
+pandas==0.25.3          # python 3.5 - 3.8
+scikit-learn==0.20.4    # python 3.4 - 3.7
+
 pylint==2.6.0
 pytest==6.2.1
 pytest-cov==2.10.1
 nbval==0.9.6
-locust==1.4.1
+locust
