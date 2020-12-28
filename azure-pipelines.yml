@@ -11,7 +11,7 @@ variables:
   azureServiceConnectionId: '617181f3-f7c2-450e-bbcf-ddc3977456a7'
   
   # Web app name
-  webAppName: 'udacity-azure-course-project2-cicd'
+  webAppName: 'udacity-azure-course-project2-cicd-appservice'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'

@@ -1,9 +1,10 @@
 # Overview
+
 ![Python application test with Github Actions](https://github.com/schildner/udacity-azure-course-project2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
 This project contains a python flask app which serves out housing prices predictions through API calls.
 
-The algorithm is based on pre-trained sklearn ML model for Boston area. 
+The algorithm is based on pre-trained sklearn ML model for Boston area.
 
 This repository was created for the Udacity Azure DevOps Course Project 2 submission to demonstrate CI/CD techiques knowledge acquired in the course. Pushes to this GitHub repository's main branch trigger a CI build on GitHub Actions. Continuous Delivery pipeline, also triggered automatically by pushes to this repository is performed via Azure Pipelines.
 
@@ -15,7 +16,7 @@ This repository was created for the Udacity Azure DevOps Course Project 2 submis
 
 ## Instructions
   
-### Architectural Diagram 
+### Architectural Diagram
 
 <TODO (Shows how key parts of the system work)>
 
@@ -135,7 +136,7 @@ Port: 443
 
 In future, this project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
-## Demo 
+## Demo
 
 <TODO: Add link Screencast on YouTube>
 
