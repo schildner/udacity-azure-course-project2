@@ -77,7 +77,8 @@ udacity-azure-course-project2-cicd-cloudshell-sa
 
 * Project running on Azure App Service
 
-Create a webapp and deploy code from a local workspace to the app. The command is required to run from the folder where the code is present. 
+Create a webapp and deploy code from a local workspace to the app. The command is required to run from the folder where the code is present.
+
 ```bash
 (.udacity-azure-course-project2) user@Azure:~/udacity-azure-course-project2$ ./commands.sh
 
@@ -102,8 +103,6 @@ You can launch the app at http://udacity-azure-course-project2-cicd.azurewebsite
   "sku": "FREE",
   "src_path": "//home//anja//udacity-azure-course-project2"
 }
-(.udacity-azure-course-project2) anja@Azure:~/udacity-azure-course-project2$
-(.udacity-azure-course-project2) anja@Azure:~/udacity-azure-course-project2$
 ```
 
 * Project cloned into Azure Cloud Shell
@@ -114,7 +113,6 @@ You can launch the app at http://udacity-azure-course-project2-cicd.azurewebsite
 
 * Output of a test run
 ![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/build1-pass.png?raw=true)
-
 
 * Successful deploy of the project in Azure Pipelines.  <TODO>.
 
