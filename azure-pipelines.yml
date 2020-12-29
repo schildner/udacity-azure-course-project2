@@ -17,7 +17,7 @@ variables:
   vmImageName: 'ubuntu-16.04'
 
   # Environment name
-  environmentName: 'udacity-azure-course-project2-cicd'
+  environmentName: 'azure-devops'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -39,11 +39,8 @@ stages:
       displayName: 'Use Python $(pythonVersion)'
     
     - script: |
-        python -m venv antenv
-        source antenv/bin/activate
-        python -m pip install --upgrade pip
-        pip install setup
-        pip install -r requirements.txt
+        make setup
+        make install
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
