@@ -29,13 +29,33 @@ This repository was created for the Udacity Azure DevOps Course Project 2 submis
 ### Getting Started
 
 1. Open Azure cloud shell
-2. Create gpg keys for ssh access and add them to your GitHub (Settings, GPG keys, add new)
-3. Clone this repository
-4. Make sure the following environment variables are set and correspond to your azure account details:
+2. Create gpg keys for ssh access to GitHub repo. This creates files with private and public keys in directory ~/.ssh/
+```bash
+user@Azure:~/ ssh-keygen -t rsa
+```
+3. Copy contents of the new public key file: id_rsa.pub
+```bash
+user@Azure:~/ cat ~/.ssh/id_rsa.pub
+```
+4. Add new key to your GitHub profile (Settings, GPG keys, add new), paste the key and add some name - could be anything.
+5. Clone this repository into your azure cloud shell:
+```bash
+user@Azure:~/ git clone git@github.com:schildner/udacity-azure-course-project2.git
+```
+6. Enter the dir with the project:
+```bash
+user@Azure:~/ cd udacity-azure-course-project2
+```
+7. Install & activate virtual environment, install dependencies:
+```bash
+user@Azure:udacity-azure-course-project2/ make setup && make install
+```
+
+8. Make sure the following environment variables are set and correspond to your azure account details:
 
 * ARM_CLIENT_ID
 * ARM_CLIENT_SECRET
-* ARM_SUBSCRIPTION_ID 
+* ARM_SUBSCRIPTION_ID
 * ARM_TENANT_ID
 
 Login to your azure account and see the account details:
