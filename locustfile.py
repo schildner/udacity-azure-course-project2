@@ -5,12 +5,12 @@ from locust import HttpUser, task
 class QuickstartUser(HttpUser):
     host = "https://udacity-azure-course-project2-cicd-appservice.azurewebsites.net:443"
 
-    @task
-    def hello_world(self):
-        self.client.get("/")
+    #@task
+    #def hello_world(self):
+    #    self.client.get("/")
   
-    @task(3)
-    def view_item(self):
+    @task
+    def predict(self):
         payload = { 
             "CHAS": {"0": 0}, 
             "RM": {"0": 6.575},
@@ -20,10 +20,8 @@ class QuickstartUser(HttpUser):
             "LSTAT": {"0": 4.98} 
         }
 
-        for item_id in range(10):
+        for item in range(10):
             #jsonData = json.dumps(payload)
             #print(jsonData)
-            response = self.client.post("/predict", payload)
-            print("Response status code:", response.status_code)
-            print("Response text:", response.text)
+            response = self.client.post("/predict", json=payload, headers={'Content-Type': 'application/json'})
             time.sleep(1)
