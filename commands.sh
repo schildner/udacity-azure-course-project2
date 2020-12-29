@@ -7,15 +7,6 @@ make setup
 make install
 
 # Update: Resource group now created by terraform! Uncomment if necessary.
-# Create Resource Group in nearest Location necessary for running a webapp
-# az group create --name udacity-azure-course-project1-iac-rg --location westeurope
-
-# Deploy webapp 
-#az webapp up -n udacity-azure-course-project2-cicd-appservice \
-#      --sku F1 \
-#      --resource-group udacity-azure-course-project2-cicd-rg \
-#      --location westeurope
-
 
 # DEPLOY MANUALLY
 
@@ -40,4 +31,4 @@ make install
 
 
 # Follow the logs of running webapp
-az webapp log tail --ids /subscriptions/$ARM_SUBSCRIPTION_ID/resourceGroups/alindenk_rg_Linux_westeurope/providers/Microsoft.Web/sites/udacity-azure-course-project2-cicd-appservice
+#az webapp log tail --name udacity-azure-course-project2-cicd-appservice --resource-group udacity-azure-course-project2-cicd-rg

@@ -22,46 +22,43 @@ This repository was created for the Udacity Azure DevOps Course Project 2 submis
 
 ### Dependencies
 
-1. Create an [Azure Account](https://portal.azure.com) 
-2. Install the [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+1. Create an [Azure Account](https://portal.azure.com)
+2. Create Account on GitHub [GitHub Account](https://github.com)
 3. Install [Terraform](https://www.terraform.io/downloads.html)
 
 ### Getting Started
 
 1. Open Azure cloud shell
 2. Create gpg keys for ssh access to GitHub repo. This creates files with private and public keys in directory ~/.ssh/
+
 ```bash
 user@Azure:~/ ssh-keygen -t rsa
 ```
+
 3. Copy contents of the new public key file: id_rsa.pub
+
 ```bash
 user@Azure:~/ cat ~/.ssh/id_rsa.pub
 ```
+
 4. Add new key to your GitHub profile (Settings, GPG keys, add new), paste the key and add some name - could be anything.
+
 5. Clone this repository into your azure cloud shell:
+
 ```bash
 user@Azure:~/ git clone git@github.com:schildner/udacity-azure-course-project2.git
 ```
-6. Enter the dir with the project:
-```bash
-user@Azure:~/ cd udacity-azure-course-project2
-```
-7. Install & activate virtual environment, install dependencies:
-```bash
-user@Azure:udacity-azure-course-project2/ make setup && make install
-```
 
-8. Make sure the following environment variables are set and correspond to your azure account details:
+6. Make sure the following environment variables are set and correspond to your azure account details:
 
 * ARM_CLIENT_ID
 * ARM_CLIENT_SECRET
 * ARM_SUBSCRIPTION_ID
 * ARM_TENANT_ID
 
-Login to your azure account and see the account details:
+See the account details:
 
 ```bash
-user@Azure:~/ az login
 user@Azure:~/ az account list
 ```
 
@@ -77,36 +74,36 @@ user@Azure:~/ export ARM_TENANT_ID=<value from property 'tenantId'>
 
 ### Instructions for running the Python project
 
-0. In Azure cloud shell
-
-1. Go into the cloned project's directory and perform the following Terraform commands:
+1. While still in Azure cloud shell cd into the project dir:
 
 ```bash
-user@Azure:~/$ cd udacity-azure-course-project2
-user@Azure:~/udacity-azure-course-project2$ terraform init
-user@Azure:~/udacity-azure-course-project2$ terraform plan -out solution.plan
-user@Azure:~/udacity-azure-course-project2$ terraform apply "solution.plan"
+user@Azure:~/ cd udacity-azure-course-project2
 ```
 
-This should have created the resource group, app service plan, app service and storage account:
-udacity-azure-course-project2-cicd-rg
-udacity-azure-course-project2-cicd-asp
-udacity-azure-course-project2-cicd-appservice
-udacity-azure-course-project2-cicd-cloudshell-sa
-
-2. Run the script commands.sh to deploy the python project to Azure
-
-* Project running on Azure App Service
-
-Create a webapp and deploy code from a local workspace to the app. The command is required to run from the folder where the code is present.
+2. Install & activate virtual environment, install dependencies:
 
 ```bash
-(.udacity-azure-course-project2) user@Azure:~/udacity-azure-course-project2$ ./commands.sh
+user@Azure:~/udacity-azure-course-project2/ make setup && make install
+```
 
+3. Create a webapp and deploy code from a local workspace to the app.
+
+The command is required to run from the folder where the code is present. If necessary adapt parameter values for webapp name (-n; needs to be unique), location (-l) and sku.
+
+Example:
+
+```bash
+user@Azure:~/udacity-azure-course-project2/ az webapp up -n udacity-azure-course-project2-cicd-appservice -l westeurope --sku B1
+```
+
+This should result in the app running in the cloud and being accessible from the internet.
+Expected output for successfull deployment:
+
+```bash
 The webapp 'udacity-azure-course-project2-cicd' doesn't exist
 Creating webapp 'udacity-azure-course-project2-cicd' ...
 Configuring default logging for the app, if not already enabled
-Creating zip with contents of dir /home/anja/udacity-azure-course-project2 ...
+Creating zip with contents of dir /home/user/udacity-azure-course-project2 ...
 Getting scm site credentials for zip deployment
 Starting zip deployment. This operation can take a while to complete ...
 Deployment endpoint responded with status code 202
@@ -122,12 +119,61 @@ You can launch the app at http://udacity-azure-course-project2-cicd.azurewebsite
   "runtime_version": "python|3.7",
   "runtime_version_detected": "-",
   "sku": "FREE",
-  "src_path": "//home//anja//udacity-azure-course-project2"
+  "src_path": "//home//user//udacity-azure-course-project2"
 }
 ```
 
+4. Export resource group name
+
+If --resource-group was not supplied it gets created automatically. It's handy to export its name to an env variable:
+
+```bash
+user@Azure:~/udacity-azure-course-project2/ export RG_WEBAPP=udacity-azure-course-project2-rg
+```
+
+5. Double check app is running by going to http://udacity-azure-course-project2-cicd.azurewebsites.net in your browser.
+
+You should see the default webapp title: Sklearn Prediction Home
+
+6. Run a script to predict price for set of housing location related parameters supplied in the following script:
+
+If necessary adapt the URL in the script to match the app's URL. Successful response looks like the one below.
+
+```bash
+user@Azure:~/udacity-azure-course-project2/ ./make_predict_azure_app.sh
+Port: 443
+{"prediction":[20.35373177134412]}
+```
+
+7. (Optionally) Run load test from azure cloud shell to see how the app behaves under simulated load:
+
+For more details about load tests with locust see the file load_test.sh for some insights .
+
+```bash
+user@Azure:~/udacity-azure-course-project2/ locust -f locustfile.py --headless -u 100 -r 10 -t 30s
+```
+
+### Terraform
+
+1. Go into the cloned project's directory and perform the following Terraform commands:
+
+```bash
+user@Azure:~/$ cd udacity-azure-course-project2
+user@Azure:~/udacity-azure-course-project2$ terraform init
+user@Azure:~/udacity-azure-course-project2$ terraform plan -out solution.plan
+user@Azure:~/udacity-azure-course-project2$ terraform apply "solution.plan"
+```
+
+This should have created the resource group and app service plan:
+udacity-azure-course-project2-cicd-rg
+udacity-azure-course-project2-cicd-asp
+
+2. Deploy the python project to Azure App Service.
+
+* Project running on Azure App Service
+
 * Project cloned into Azure Cloud Shell
-![Screenshot project cloned into Azure Cloud Shelld](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/cloud-shell-cloned-github-repo-via-ssh.png?raw=true)
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/cloud-shell-cloned-github-repo-via-ssh.png?raw=true)
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 ![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/cloud-shell-make-all.png?raw=true)
@@ -150,14 +196,21 @@ Port: 443
 
 * Output of streamed log files from deployed application
 
+Adapt the name or resource-group parameters to match the actual webapp name and rg should they be different to your setup.
+
+Logs can be streamed by:
+
+```bash
+udacity@Azure:~$ az webapp log tail --name udacity-azure-course-project2-cicd-appservice --resource-group udacity-azure-course-project2-cicd-rg
+```
 > 
 
 ## Enhancements
 
-In future, this project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+- In future, this project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+
+- One pipeline combining CI and CD would be tidier but it was a lesson of this project to learn both: GitHub Actions and Azure Pipelines.
 
 ## Demo
 
 <TODO: Add link Screencast on YouTube>
-
-
