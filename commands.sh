@@ -24,11 +24,11 @@ terraform init
 terraform plan -out solution.plan
 terraform apply "solution.plan"
 
-
+# DEPLOY APP
 az webapp up \
       -n udacity-azure-course-project2-cicd-appservice \
       -l westeurope \
-      --sku B1
+      --sku B1 \
 
 # Follow the logs of running webapp
 #az webapp log tail --name udacity-azure-course-project2-cicd-appservice --resource-group udacity-azure-course-project2-cicd-rg
