@@ -93,7 +93,10 @@ The command is required to run from the folder where the code is present. If nec
 Example:
 
 ```bash
-user@Azure:~/udacity-azure-course-project2/ az webapp up -n udacity-azure-course-project2-cicd-appservice -l westeurope --sku B1
+user@Azure:~/udacity-azure-course-project2/ az webapp up \
+                -n udacity-azure-course-project2-cicd-appservice \
+                -l westeurope \
+                --sku B1
 ```
 
 This should result in the app running in the cloud and being accessible from the internet.
@@ -113,7 +116,7 @@ You can launch the app at http://udacity-azure-course-project2-cicd.azurewebsite
   "URL": "http://udacity-azure-course-project2-cicd.azurewebsites.net",
   "appserviceplan": "udacity-azure-course-project2-cicd-asp",
   "location": "westeurope",
-  "name": "udacity-azure-course-project2-cicd",
+  "name": "udacity-azure-course-project2-cicd-appservice",
   "os": "Linux",
   "resourcegroup": "udacity-azure-course-project2-rg",
   "runtime_version": "python|3.7",
@@ -131,7 +134,7 @@ If --resource-group was not supplied it gets created automatically. It's handy t
 user@Azure:~/udacity-azure-course-project2/ export RG_WEBAPP=udacity-azure-course-project2-rg
 ```
 
-5. Double check app is running by going to http://udacity-azure-course-project2-cicd.azurewebsites.net in your browser.
+5. Double check app is running by going to http://udacity-azure-course-project2-cicd-appservice.azurewebsites.net in your browser.
 
 You should see the default webapp title: Sklearn Prediction Home
 
