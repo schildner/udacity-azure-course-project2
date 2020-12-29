@@ -1,15 +1,16 @@
-import time
 import json
-from locust import HttpUser, HttpBrowser, task
+import time
+from locust import HttpUser, task
 
 class QuickstartUser(HttpUser):
-
-    host = "https://udacity-azure-course-project2-cicd-appservice.azurewebsites.net:443 "
+    host = "https://udacity-azure-course-project2-cicd-appservice.azurewebsites.net:443"
 
     @task
-    def predict(self):
-        client = HttpBrowser("https://udacity-azure-course-project2-cicd-appservice.azurewebsites.net:443")
-
+    def hello_world(self):
+        self.client.get("/")
+  
+    @task(3)
+    def view_item(self):
         payload = { 
             "CHAS": {"0": 0}, 
             "RM": {"0": 6.575},
@@ -18,8 +19,11 @@ class QuickstartUser(HttpUser):
             "B": {"0": 396.9}, 
             "LSTAT": {"0": 4.98} 
         }
-        
-        jsonData = json.dumps(payload)
-        print(jsonData)
 
-        request = client.post("/predict", json=payload)
+        for item_id in range(10):
+            #jsonData = json.dumps(payload)
+            #print(jsonData)
+            response = self.client.post("/predict", payload)
+            print("Response status code:", response.status_code)
+            print("Response text:", response.text)
+            time.sleep(1)
