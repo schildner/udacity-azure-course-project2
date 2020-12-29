@@ -29,6 +29,3 @@ az webapp up \
       -n udacity-azure-course-project2-cicd-appservice \
       -l westeurope \
       --sku B1 \
-
-# Follow the logs of running webapp
-#az webapp log tail --name udacity-azure-course-project2-cicd-appservice --resource-group udacity-azure-course-project2-cicd-rg
