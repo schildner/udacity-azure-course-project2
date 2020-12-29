@@ -36,4 +36,4 @@ az webapp create \
       -g udacity-azure-course-project2-cicd-rg \
       -p udacity-azure-course-project2-cicd-asp \
       -n udacity-azure-course-project2-cicd-appservice \
-      --runtime "Python|3.8"
+      --runtime "Python|3.7.3"
