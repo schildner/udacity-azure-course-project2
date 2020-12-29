@@ -14,7 +14,7 @@ variables:
   webAppName: 'udacity-azure-course-project2-cicd-appservice'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-20.04'
+  vmImageName: 'ubuntu-18.04'
 
   # Environment name
   environmentName: 'udacity-azure-course-project2-cicd'
@@ -22,8 +22,8 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   
-  # Python version: 3.8
-  pythonVersion: '3.8'
+  # Python version: 3.5
+  pythonVersion: '3.5'
 
 stages:
 - stage: Build

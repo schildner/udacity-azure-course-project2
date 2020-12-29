@@ -1,9 +1,13 @@
-Flask==1.0.4            # python 3.4 - 3.8
-pandas==0.25.3          # python 3.5 - 3.8
-scikit-learn==0.20.4    # python 3.4 - 3.7
+# Original versions from starter code
+Flask==1.0.2            # Requires Python >= 3.4
+pandas==0.24.2          # Requires Python >= 3.5
+scikit-learn==0.20.3    # Requires Python >= 3.4
 
-pylint==2.6.0
-pytest==6.2.1
-pytest-cov==2.10.1
-nbval==0.9.6
-locust
+# Added to allow linting and tests + coverage
+pylint==2.6.0           # Requires Python >= 3.5
+pytest==6.0.2           # Requires Python >= 3.5 
+pytest-cov==2.10.1      # Requires Python >= 3.5
+
+# According to projects specs locust just has to run when webapp is deployed
+#locust                 # not required for deployment
+#nbval==0.9.6           # notebook tests wont be used
