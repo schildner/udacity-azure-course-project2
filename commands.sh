@@ -36,4 +36,8 @@ make install
 #      -g udacity-azure-course-project2-cicd-rg \
 #      -p udacity-azure-course-project2-cicd-asp \
 #      -n udacity-azure-course-project2-cicd-appservice \
-#      --runtime "Python|3.7.3"
+#      --runtime "Python|3.7"
+
+
+# Follow the logs of running webapp
+az webapp log tail --ids /subscriptions/$ARM_SUBSCRIPTION_ID/resourceGroups/alindenk_rg_Linux_westeurope/providers/Microsoft.Web/sites/udacity-azure-course-project2-cicd-appservice
