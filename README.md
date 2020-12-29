@@ -72,7 +72,7 @@ user@Azure:~/ export ARM_SUBSCRIPTION_ID=<value from property 'id'>
 user@Azure:~/ export ARM_TENANT_ID=<value from property 'tenantId'>
 ```
 
-### Instructions for running the Python project
+## Running the Python project
 
 1. While still in Azure cloud shell cd into the project dir:
 
@@ -156,46 +156,45 @@ For more details about load tests with locust see the file load_test.sh for some
 user@Azure:~/udacity-azure-course-project2/ locust -f locustfile.py --headless -u 100 -r 10 -t 30s
 ```
 
-### Terraform
+## Alternative deployment via script using Terraform
 
-1. Go into the cloned project's directory and perform the following Terraform commands:
+1. Go into the cloned project's directory and run the script commands.sh:
 
 ```bash
 user@Azure:~/$ cd udacity-azure-course-project2
-user@Azure:~/udacity-azure-course-project2$ terraform init
-user@Azure:~/udacity-azure-course-project2$ terraform plan -out solution.plan
-user@Azure:~/udacity-azure-course-project2$ terraform apply "solution.plan"
+user@Azure:~/udacity-azure-course-project2$ ./commands.sh
 ```
 
-This should have created the resource group and app service plan:
+This should have created the resource group and app service plan using Terraform:
 udacity-azure-course-project2-cicd-rg
 udacity-azure-course-project2-cicd-asp
 
-2. Deploy the python project to Azure App Service.
+And also deployed the python project to Azure App Service using same command as in the Running the Python project section - using the command az webapp up.
+
+## Screenshots
 
 * Project running on Azure App Service
+![Screenshot project running Azure Portal](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/webapp-running-portal.png?raw=true)
+
+![Screenshot project running Homepage](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/webapp-running-homepage.png?raw=true)
 
 * Project cloned into Azure Cloud Shell
-![Screenshot project cloned into Azure Cloud Shell](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/cloud-shell-cloned-github-repo-via-ssh.png?raw=true)
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/cloud-shell-project-cloned.png?raw=true)
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 ![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/cloud-shell-make-all.png?raw=true)
 
 * Output of a test run
-![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/build1-pass.png?raw=true)
+![Screenshot output of a test run](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/cloud-shell-run-tests.png?raw=true)
 
-* Successful deploy of the project in Azure Pipelines.  <TODO>.
+* Successful run of CD in Azure Pipelines.
+![Screenshot stages in Azure Pipelines](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/azure-pipelines-stages.png?raw=true)
 
-* Running Azure App Service from Azure Pipelines automatic deployment <TODO>
+* Successful deploy of the project in Azure Pipelines (automatic deployment).
+![Screenshot deploy in Azure Pipelines](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/deploy-azure-pipelines.png?raw=true)
 
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
+* Successful prediction from deployed flask app in Azure Cloud Shell.
+![Screenshot run prediction](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/run-prediction.png?raw=true)
 
 * Output of streamed log files from deployed application
 
@@ -204,9 +203,12 @@ Adapt the name or resource-group parameters to match the actual webapp name and 
 Logs can be streamed by:
 
 ```bash
-udacity@Azure:~$ az webapp log tail --name udacity-azure-course-project2-cicd-appservice --resource-group udacity-azure-course-project2-cicd-rg
+udacity@Azure:~$ az webapp log tail \
+    --name udacity-azure-course-project2-cicd-appservice \
+    --resource-group udacity-azure-course-project2-cicd-rg
 ```
-> 
+
+![Screenshot application logs](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/logs.png?raw=true)
 
 ## Enhancements
 
