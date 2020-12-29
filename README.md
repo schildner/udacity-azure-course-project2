@@ -197,18 +197,17 @@ And also deployed the python project to Azure App Service using same command as 
 ![Screenshot run prediction](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/run-prediction.png?raw=true)
 
 * Output of streamed log files from deployed application
-
-Adapt the name or resource-group parameters to match the actual webapp name and rg should they be different to your setup.
+![Screenshot application logs](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/logs.png?raw=true)
 
 Logs can be streamed by:
 
 ```bash
 udacity@Azure:~$ az webapp log tail \
     --name udacity-azure-course-project2-cicd-appservice \
-    --resource-group udacity-azure-course-project2-cicd-rg
+    --resource-group $RG_WEBAPP
 ```
 
-![Screenshot application logs](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/logs.png?raw=true)
+Adapt the name or resource-group parameters to match the actual webapp name and resource group should they be different to your setup.
 
 ## Enhancements
 
