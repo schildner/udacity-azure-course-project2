@@ -196,6 +196,15 @@ And also deployed the python project to Azure App Service using same command as 
 * Successful prediction from deployed flask app in Azure Cloud Shell.
 ![Screenshot run prediction](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/run-prediction.png?raw=true)
 
+* Successful load test run with Locust run in Azure Cloud Shell.
+![Screenshot load test](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/locust-load-test-run.png?raw=true)
+
+The screenshot above illustrates execution of the locust command which (as per load test definition in locustfile.py) simulates 10 users accessing the webapp's URL and generating get and post requests repeatedly for the duration of 5 seconds. To run it, just execute: 
+
+```bash
+udacity@Azure:~$ locust -f locustfile.py --headless -u 10 -r 5 -t 5s
+```
+
 * Output of streamed log files from deployed application
 ![Screenshot application logs](https://github.com/schildner/udacity-azure-course-project2/blob/main/screenshots/logs.png?raw=true)
 
@@ -206,6 +215,8 @@ udacity@Azure:~$ az webapp log tail \
     --name udacity-azure-course-project2-cicd-appservice \
     --resource-group $RG_WEBAPP
 ```
+
+
 
 Adapt the name or resource-group parameters to match the actual webapp name and resource group should they be different to your setup.
 
