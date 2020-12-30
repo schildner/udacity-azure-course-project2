@@ -20,7 +20,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home - friendlier</h3>"
+    html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 @app.route("/predict", methods=['POST'])
@@ -69,7 +69,7 @@ def predict():
     prediction = list(clf.predict(scaled_payload))
     LOG.info("Prediction value: %s", prediction)
     
-    return 'Predicted house price for Boston area: ' + jsonify({'prediction': prediction})
+    return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
