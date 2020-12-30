@@ -217,4 +217,4 @@ Adapt the name or resource-group parameters to match the actual webapp name and 
 
 ## Demo
 
-TODO: Add link Screencast on YouTube
+Link to [Screencast on YouTube](https://youtu.be/hQhSaTQUA8M)
