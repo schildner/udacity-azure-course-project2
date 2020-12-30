@@ -18,7 +18,7 @@ This repository was created for the Udacity Azure DevOps Course Project 2 submis
   
 ### Architectural Diagram
 
-<TODO (Shows how key parts of the system work)>
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/schildner/udacity-azure-course-project2/blob/main/azure-devops-project2-architecture.png?raw=true)
 
 ### Dependencies
 
