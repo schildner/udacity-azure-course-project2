@@ -1,6 +1,6 @@
 # Overview
 
-![Python application test with Github Actions](https://github.com/schildner/udacity-azure-course-project2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
+![Python application test with Github Actions](https://github.com/schildner/udacity-azure-course-project2/workflows/Python+application+test+with+Github+Actions/badge.svg)
 
 This project contains a python flask app which serves out housing prices predictions through API calls.
 
@@ -217,4 +217,4 @@ Adapt the name or resource-group parameters to match the actual webapp name and 
 
 ## Demo
 
-<TODO: Add link Screencast on YouTube>
+TODO: Add link Screencast on YouTube
