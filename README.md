@@ -23,7 +23,7 @@ This repository was created for the Udacity Azure DevOps Course Project 2 submis
 ### Dependencies
 
 1. Create an [Azure Account](https://portal.azure.com)
-2. Create Account on GitHub [GitHub Account](https://github.com)
+2. Create a [GitHub Account](https://github.com)
 3. Install [Terraform](https://www.terraform.io/downloads.html)
 
 ### Getting Started
@@ -43,7 +43,7 @@ user@Azure:~/ cat ~/.ssh/id_rsa.pub
 
 4. Add new key to your GitHub profile (Settings, GPG keys, add new), paste the key and add some name - could be anything.
 
-5. Clone this repository into your azure cloud shell:
+5. Fork this repository and clone it into your azure cloud shell. Adapt the URL to match your forked repo:
 
 ```bash
 user@Azure:~/ git clone git@github.com:schildner/udacity-azure-course-project2.git
