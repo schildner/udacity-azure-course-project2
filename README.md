@@ -11,8 +11,8 @@ This repository was created for the Udacity Azure DevOps Course Project 2 submis
 ## Table of Contents
 
 - [Demo](#demo)
-- [Project Plan](#project-plan)
 - [Architectural Diagram](#architectural-diagram)
+- [Project Plan](#project-plan)
 - [Instructions](#instructions)
   * [Dependencies](#dependencies)
   * [Getting Started](#getting-started)
@@ -27,15 +27,15 @@ Link to screencast:
 
 [![Project 2 Demo - CI/CD](https://i9.ytimg.com/vi_webp/hQhSaTQUA8M/mqdefault.webp?time=1611394500000&sqp=CMTbr4AG&rs=AOn4CLDRbvVygKSpjFm7TtPc4GK11GuGvw)](http://www.youtube.com/watch?v=hQhSaTQUA8M "Udacity Azure Devops Course Demo - Project 2 - CI/CD")
 
+## Architectural Diagram
+
+![Screenshot project cloned into Azure Cloud Shell](https://github.com/schildner/udacity-azure-course-project2/blob/main/azure-devops-project2-architecture.png?raw=true)
+
 ## Project Plan
 
 * A link to a Trello board for the project: [Udacity Azure Course Project 2](https://trello.com/b/2bKbpU9v/udacity-azure-course-project-2)
 * A link to a spreadsheet that includes the original and final project plan: [Spreadsheet on Google Drive](https://docs.google.com/spreadsheets/d/1VvhKAVZM7I1qVYufkkjYf5vR3nBcCQtji21aupZyXik/edit?usp=sharing)
   * (Contains 5 sheets: Yearly Project Management Plan, Q1, Q2, Q3, Q4)
-
-## Architectural Diagram
-
-![Screenshot project cloned into Azure Cloud Shell](https://github.com/schildner/udacity-azure-course-project2/blob/main/azure-devops-project2-architecture.png?raw=true)
 
 ## Instructions
 
