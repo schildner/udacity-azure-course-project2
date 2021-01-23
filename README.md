@@ -8,17 +8,36 @@ The algorithm is based on pre-trained sklearn ML model for Boston area.
 
 This repository was created for the Udacity Azure DevOps Course Project 2 submission to demonstrate CI/CD techiques knowledge acquired in the course. Pushes to this GitHub repository's main branch trigger a CI build on GitHub Actions. Continuous Delivery pipeline, also triggered automatically by pushes to this repository is performed via Azure Pipelines.
 
+## Table of Contents
+
+- [Demo](#demo)
+- [Project Plan](#project-plan)
+- [Architectural Diagram](#architectural-diagram)
+- [Instructions](#instructions)
+  * [Dependencies](#dependencies)
+  * [Getting Started](#getting-started)
+  * [Running the Python project](#running-the-python-project)
+- [Alternative deployment via script using Terraform](#alternative-deployment-via-script-using-terraform)
+- [Screenshots](#screenshots)
+- [Future Enhancements](#future-enhancements)
+
+## Demo
+
+Link to screencast:
+
+[![Project 2 Demo - CI/CD](https://i9.ytimg.com/vi_webp/hQhSaTQUA8M/mqdefault.webp?time=1611394500000&sqp=CMTbr4AG&rs=AOn4CLDRbvVygKSpjFm7TtPc4GK11GuGvw)](http://www.youtube.com/watch?v=hQhSaTQUA8M "Udacity Azure Devops Course Demo - Project 2 - CI/CD")
+
 ## Project Plan
 
 * A link to a Trello board for the project: [Udacity Azure Course Project 2](https://trello.com/b/2bKbpU9v/udacity-azure-course-project-2)
 * A link to a spreadsheet that includes the original and final project plan: [Spreadsheet on Google Drive](https://docs.google.com/spreadsheets/d/1VvhKAVZM7I1qVYufkkjYf5vR3nBcCQtji21aupZyXik/edit?usp=sharing)
   * (Contains 5 sheets: Yearly Project Management Plan, Q1, Q2, Q3, Q4)
 
-## Instructions
-  
-### Architectural Diagram
+## Architectural Diagram
 
 ![Screenshot project cloned into Azure Cloud Shell](https://github.com/schildner/udacity-azure-course-project2/blob/main/azure-devops-project2-architecture.png?raw=true)
+
+## Instructions
 
 ### Dependencies
 
@@ -216,17 +235,10 @@ udacity@Azure:~$ az webapp log tail \
     --resource-group $RG_WEBAPP
 ```
 
-
-
 Adapt the name or resource-group parameters to match the actual webapp name and resource group should they be different to your setup.
 
-## Enhancements
+## Future Enhancements
 
-- In future, this project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+- This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
 - One pipeline combining CI and CD would be tidier but it was a lesson of this project to learn both: GitHub Actions and Azure Pipelines.
-
-## Demo
-
-Link to screencast: 
-[![Udacity Azure Devops Course Demo - Project 2 - CI/CD](https://i9.ytimg.com/vi_webp/hQhSaTQUA8M/mqdefault.webp?time=1611394500000&sqp=CMTbr4AG&rs=AOn4CLDRbvVygKSpjFm7TtPc4GK11GuGvw)](http://www.youtube.com/watch?v=hQhSaTQUA8M "Udacity Azure Devops Course Demo - Project 2 - CI/CD")
