@@ -228,4 +228,5 @@ Adapt the name or resource-group parameters to match the actual webapp name and 
 
 ## Demo
 
-Link to screencast: [![Udacity Azure Devops Course Demo - Project 2 - CI/CD](http://img.youtube.com/vi/hQhSaTQUA8M/0.jpg)](http://www.youtube.com/watch?v=hQhSaTQUA8M "Udacity Azure Devops Course Demo - Project 2 - CI/CD")
+Link to screencast: 
+[![Udacity Azure Devops Course Demo - Project 2 - CI/CD](https://i9.ytimg.com/vi_webp/hQhSaTQUA8M/mqdefault.webp?time=1611394500000&sqp=CMTbr4AG&rs=AOn4CLDRbvVygKSpjFm7TtPc4GK11GuGvw)](http://www.youtube.com/watch?v=hQhSaTQUA8M "Udacity Azure Devops Course Demo - Project 2 - CI/CD")
