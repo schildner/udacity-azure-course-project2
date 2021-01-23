@@ -2,7 +2,7 @@
 
 ![Python application test with Github Actions](https://github.com/schildner/udacity-azure-course-project2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
-This is a Project 2 submission for the [Udacity Azure DevOps Nanodegree Course](https://www.udacity.com/course/devops-engineer-for-microsoft-azure-nanodegree--nd082) demonstrating CI/CD techiques and skills acquired in the course. 
+This is a Project 2 submission for [Udacity Azure DevOps Course](https://www.udacity.com/course/devops-engineer-for-microsoft-azure-nanodegree--nd082) demonstrating CI/CD techiques and skills acquired in the course. 
 
 - Pushes to this GitHub repository's main branch trigger:
   * Continuous Integration pipeline on GitHub Actions. 
