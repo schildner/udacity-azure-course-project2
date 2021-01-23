@@ -2,9 +2,13 @@
 
 ![Python application test with Github Actions](https://github.com/schildner/udacity-azure-course-project2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
-This project was created for the Udacity Azure DevOps Course Project 2 submission to demonstrate CI/CD techiques knowledge acquired in the course. Pushes to this GitHub repository's main branch trigger a CI build on GitHub Actions. Continuous Delivery pipeline, also triggered automatically by pushes to this repository is performed via Azure Pipelines.
+This project was created for Project 2 submission of the ![Udacity Azure DevOps Nanodegree Course](https://www.udacity.com/course/devops-engineer-for-microsoft-azure-nanodegree--nd082) to demonstrate CI/CD techiques knowledge acquired in the course. 
 
-It contains a python flask app which serves out housing prices predictions through API calls. The algorithm is based on pre-trained sklearn ML model for Boston area.
+- Pushes to this GitHub repository's main branch trigger:
+  * Continuous Integration pipeline on GitHub Actions. 
+  * Continuous Delivery pipeline on Azure Pipelines.
+
+The project contains a Python Flask WebApp which serves out housing prices predictions through API calls. The algorithm is based on pre-trained sklearn ML model for Boston area.
 
 ## Table of Contents
 
